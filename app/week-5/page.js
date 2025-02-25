@@ -1,0 +1,10 @@
+import NewItem from "./new-item";
+
+export default function Page() {
+    return(
+        <div className="flex flex-col items-center h-screen bg-blue-50 p-5">
+            <h1 className="font-bold mb-3 ">Add New Item</h1>
+            <NewItem />
+        </div>
+    )
+}
