@@ -23,20 +23,29 @@ export default function MealIdeas({ ingredient }) {
     };
 
     return (
-        <div className="p-6 bg-white rounded-lg shadow-lg">
-            <h2 className="text-xl font-bold text-gray-700 mb-4">
-                Meal Ideas for {ingredient || "..." }
+        <div className="p-6 bg-blue-50 rounded-xl shadow-md border border-blue-300">
+            <h2 className="text-2xl font-semibold text-blue-800 mb-4 text-center">
+                Meal Ideas for {ingredient || "..."}
             </h2>
             <ul className="space-y-4">
                 {meals.length > 0 ? (
                     meals.map((meal) => (
-                        <li key={meal.idMeal} className="flex items-center space-x-4">
-                            <img src={meal.strMealThumb} alt={meal.strMeal} className="w-16 h-16 rounded-md" />
-                            <span className="text-blue-600 font-semibold">{meal.strMeal}</span>
+                        <li
+                            key={meal.idMeal}
+                            className="flex items-center p-3 bg-blue-100 rounded-lg shadow hover:shadow-lg transition-shadow duration-300 border border-blue-200"
+                        >
+                            <img
+                                src={meal.strMealThumb}
+                                alt={meal.strMeal}
+                                className="w-20 h-20 rounded-lg object-cover border border-blue-400"
+                            />
+                            <span className="ml-4 text-lg font-medium text-blue-700 hover:text-blue-500 transition-colors duration-300">
+                                {meal.strMeal}
+                            </span>
                         </li>
                     ))
                 ) : (
-                    <p className="text-gray-500">No meal ideas found.</p>
+                    <p className="text-blue-500 text-center">No meal ideas found.</p>
                 )}
             </ul>
         </div>
